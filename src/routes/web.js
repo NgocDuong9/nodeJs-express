@@ -1,14 +1,10 @@
 const express = require("express");
+const { getHomePage, test } = require("../controllers/homeController");
 const routes = express.Router();
 
 // khai bao route
-routes.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
-routes.get("/test", (req, res) => {
-  // res.send("Hello World!");
-  res.render("sample.ejs");
-});
+// routes.method('route', function)
+routes.get("/", getHomePage);
+routes.get("/test", test);
 
 module.exports = routes;
