@@ -1,0 +1,17 @@
+{
+  "name": "nodeJs",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon ./src/server.js"
+  },
+  "main": "index.js",
+  "repository": "https://github.com/NgocDuong9/nodeJs-express.git",
+  "author": "NguyenNgocDuong <78304672+NguyenNgocDuongHumg@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0"
+  }
+}
