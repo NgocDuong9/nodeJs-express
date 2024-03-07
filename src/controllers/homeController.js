@@ -1,7 +1,16 @@
+const connection = require("../config/database");
+
 const getHomePage = (req, res) => {
   //process data
   // call modal
-  res.send("home");
+
+  let user = [];
+
+  connection.query("SELECT * FROM Users;", function (err, results, fields) {
+    console.log("result ===>", results); // results contains rows returned by server
+    user = results;
+    res.send(JSON.stringify(user));
+  });
 };
 
 const test = (req, res) => {
