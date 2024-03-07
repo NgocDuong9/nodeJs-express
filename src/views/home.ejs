@@ -6,36 +6,56 @@
 
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    tr:hover {
+      background-color: #ccc;
+    }
+    .table-container {
+      padding: 20px 40px;
+    }
 
+    .title {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  </style>
   <body>
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      <a class="active" href="/">Home</a>
+      <a href="/create">Create User</a>
+      <!-- <a href="#contact">Contact</a>
+      <a href="#about">About</a> -->
     </div>
-
-    <div class="form-add-new">
-      <form action="/createUser" method="post">
-        <fieldset>
-          <legend>Form add new User 1</legend>
-          <div class="input-group">
-            <label>Email</label>
-            <input type="text" placeholder="Enter your email" name="email" />
-          </div>
-          <div class="input-group">
-            <label>Name</label>
-            <input type="text" placeholder="Enter your name" name="myname" />
-          </div>
-          <div class="input-group">
-            <label>City</label>
-            <input type="text" placeholder="Enter your city" name="city" />
-          </div>
-          <div>
-            <button type="submit" style="cursor: pointer">Submit1</button>
-          </div>
-        </fieldset>
-      </form>
+    <div class="table-container">
+      <div class="title">List Users</div>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+        </tr>
+        <tr>
+          <td>Peter</td>
+          <td>Griffin</td>
+          <td>$100</td>
+        </tr>
+        <tr>
+          <td>Lois</td>
+          <td>Griffin</td>
+          <td>$150</td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
