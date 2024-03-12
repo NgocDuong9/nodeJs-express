@@ -29,9 +29,15 @@ const postCreateUser = async (req, res) => {
   res.send("success");
 };
 
+const postUpdateUser = async (req, res) => {
+  console.log(req.params, "update");
+  res.render("update.ejs");
+};
+
 module.exports = {
   getHomePage,
   test,
   postCreateUser,
   create,
+  postUpdateUser,
 };
