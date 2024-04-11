@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Update a User</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
@@ -11,22 +11,36 @@
       <a href="/">Home</a>
       <a href="/create">Create User</a>
     </div>
-
     <div class="form-add-new">
-      <form action="/createUser" method="post">
+      <form action="/updateUser" method="post">
         <fieldset>
           <legend>Form edit new User</legend>
           <div class="input-group">
             <label>Email</label>
-            <input type="text" placeholder="Enter your email" name="email" />
+            <input
+              type="text"
+              placeholder="Enter your email"
+              value="<%= userEdit.email %>"
+              name="email"
+            />
           </div>
           <div class="input-group">
             <label>Name</label>
-            <input type="text" placeholder="Enter your name" name="myname" />
+            <input
+              type="text"
+              placeholder="Enter your name"
+              value="<%= userEdit.name %>"
+              name="myname"
+            />
           </div>
           <div class="input-group">
             <label>City</label>
-            <input type="text" placeholder="Enter your city" name="city" />
+            <input
+              type="text"
+              placeholder="Enter your city"
+              value="<%= userEdit.city %>"
+              name="city"
+            />
           </div>
           <div>
             <button type="submit" style="cursor: pointer">Save</button>

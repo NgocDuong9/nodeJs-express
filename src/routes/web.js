@@ -5,6 +5,7 @@ const {
   postCreateUser,
   create,
   postUpdateUser,
+  getUpdateUser,
 } = require("../controllers/homeController");
 const routes = express.Router();
 
@@ -13,8 +14,9 @@ const routes = express.Router();
 routes.get("/", getHomePage);
 routes.get("/test", test);
 routes.get("/create", create);
-routes.get("/update/:id", postUpdateUser);
+routes.get("/update/:id", getUpdateUser);
 
 routes.post("/createUser", postCreateUser);
+routes.post("/updateUser", postUpdateUser);
 
 module.exports = routes;

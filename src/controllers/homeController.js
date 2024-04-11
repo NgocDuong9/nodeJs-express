@@ -19,7 +19,7 @@ const postCreateUser = async (req, res) => {
   const email = req.body.email;
   const name = req.body.myname;
   const city = req.body.city;
-  console.log("postCreateUser", email, name, city);
+  // console.log("postCreateUser", email, name, city);
   let [result, fields] = await connection.query(
     `insert into Users (email,name,city)
   values (?,?,?)`,
@@ -29,9 +29,28 @@ const postCreateUser = async (req, res) => {
   res.send("success");
 };
 
+const getUpdateUser = async (req, res) => {
+  const userId = req.params.id;
+  let [result, fields] = await connection.query(
+    "SELECT * FROM Users WHERE id = ?",
+    [userId]
+  );
+  const user = result && result.length > 0 ? result[0] : {};
+
+  console.log(user);
+  res.render("update.ejs", { userEdit: user });
+};
+
 const postUpdateUser = async (req, res) => {
-  console.log(req.params, "update");
-  res.render("update.ejs");
+  const userId = req.params.id;
+  let [result, fields] = await connection.query(
+    "SELECT * FROM Users WHERE id = ?",
+    [userId]
+  );
+  const user = result && result.length > 0 ? result[0] : {};
+
+  console.log(user);
+  res.render("update.ejs", { userEdit: user });
 };
 
 module.exports = {
@@ -40,4 +59,5 @@ module.exports = {
   postCreateUser,
   create,
   postUpdateUser,
+  getUpdateUser,
 };
