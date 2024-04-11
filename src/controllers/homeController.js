@@ -1,5 +1,5 @@
 const connection = require("../config/database");
-const { getAllUsers } = require("../services/CRUDServiers");
+const { getAllUsers, updateUserById } = require("../services/CRUDServiers");
 
 const getHomePage = async (req, res) => {
   const result = await getAllUsers();
@@ -42,15 +42,12 @@ const getUpdateUser = async (req, res) => {
 };
 
 const postUpdateUser = async (req, res) => {
-  const userId = req.params.id;
-  let [result, fields] = await connection.query(
-    "SELECT * FROM Users WHERE id = ?",
-    [userId]
-  );
-  const user = result && result.length > 0 ? result[0] : {};
-
-  console.log(user);
-  res.render("update.ejs", { userEdit: user });
+  const email = req.body.email;
+  const name = req.body.myname;
+  const city = req.body.city;
+  const userId = req.body.userId;
+  await updateUserById(email, name, city, userId);
+  res.send("updated successfully");
 };
 
 module.exports = {
