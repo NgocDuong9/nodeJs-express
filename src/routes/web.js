@@ -6,6 +6,7 @@ const {
   create,
   postUpdateUser,
   getUpdateUser,
+  postDeleteUser,
 } = require("../controllers/homeController");
 const routes = express.Router();
 
@@ -17,6 +18,9 @@ routes.get("/create", create);
 routes.get("/update/:id", getUpdateUser);
 
 routes.post("/createUser", postCreateUser);
+
 routes.post("/updateUser", postUpdateUser);
+
+routes.post("/deleteUser/:id", postDeleteUser);
 
 module.exports = routes;
